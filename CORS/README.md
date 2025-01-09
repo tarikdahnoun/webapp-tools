@@ -67,7 +67,7 @@ If app B (subdomain.vulnerable-website.com) is vulnerable to XSS, then you can e
 https://subdomain.vulnerable-website.com/?xss=<script>cors-exploit</script>
 ```
 
-If app A trusts app B origin, and app B is not using TLS, then app A TLS is vulnerable to leaking unencrypted data.
+If app A trusts app B origin, and app B is not using TLS, then app A using TLS is vulnerable to leaking unencrypted data.
 
 1. The victim user makes any plain HTTP request.
 2. The attacker injects a redirection to:
